@@ -1,7 +1,10 @@
 .footer {
+  width: 100%;
   max-width: 880px;
+  min-width: 320px;
   margin: 66px auto 0;
   padding: 0 0 60px;
+  flex: 0 0 auto;
 }
 
 @media screen and (max-width: 900px) {

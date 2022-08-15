@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import {
   BrowserRouter,
-  HashRouter,
   Redirect,
   Route,
   Switch,
@@ -173,7 +172,7 @@ const App = () => {
   return (
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
-        <HashRouter>
+        <BrowserRouter>
           <Header loggedIn={isLogin} />
           <Switch>
             <ProtectedRoute
@@ -216,7 +215,7 @@ const App = () => {
           />
           <ImagePopup card={selectedCard} isOpen={isOpen} onClose={closeAllPopups} />
           <InfoTooltip isOpen={isTooltipPopupOpen} onClose={closeAllPopups} />
-        </HashRouter>
+        </BrowserRouter>
       </CurrentUserContext.Provider>
     </div>
   );

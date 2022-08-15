@@ -1,13 +1,16 @@
 .form__link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(17 / 14);
   display: block;
   margin: 15px 0 0;
   padding: 0;
   text-decoration: none;
   color: inherit;
   text-align: center;
-  transition: opacity .4s;
+  transition: opacity 0.4s;
 }
 
 .form__link:hover {
-  opacity: .6;
+  opacity: 0.6;
 }

@@ -1,4 +1,7 @@
 .content {
+  width: 100%;
   max-width: 880px;
+  min-width: 320px;
   margin: 0 auto;
+  flex: 1 0 auto;
 }
