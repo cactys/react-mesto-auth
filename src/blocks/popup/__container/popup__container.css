@@ -1,0 +1,32 @@
+.popup__container {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  padding: 34px 36px 37px;
+  max-width: 430px;
+  width: 100%;
+}
+
+.popup_type_photo .popup__container {
+  padding: 0;
+  width: auto;
+  max-width: 75vw;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup_type_tooltip .popup__container {
+  padding: 60px 36px;
+}
+
+@media screen and (max-width: 540px) {
+  .form {
+    max-width: 282px;
+    padding: 25px 22px;
+  }
+}

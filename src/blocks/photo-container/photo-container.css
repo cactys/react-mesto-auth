@@ -1,0 +1,6 @@
+.photo-container {
+  display: block;
+  margin-block: 0;
+  margin-inline: 0;
+  min-width: 240px;
+}

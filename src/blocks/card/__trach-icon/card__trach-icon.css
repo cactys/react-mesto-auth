@@ -1,0 +1,30 @@
+.card__trach-icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 18px;
+  height: 19px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url(../../../images/card__trash-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  align-self: center;
+  font-size: 0px;
+  transition: opacity 0.4s;
+}
+
+.card__trach-icon:hover {
+  opacity: 0.6;
+}
+
+.card__trach-icon_visible {
+  display: block;
+}
+
+.card__trach-icon_hidden {
+  display: none;
+}

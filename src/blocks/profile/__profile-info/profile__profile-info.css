@@ -1,0 +1,13 @@
+.profile__profile-info {
+  max-width: 336px;
+  min-height: 73px;
+  display: grid;
+  grid-template-columns: 100% 1fr;
+}
+
+@media screen and (max-width: 425px) {
+  .profile__profile-info {
+    max-width: 282px;
+    min-height: 54px;
+  }
+}

@@ -1,0 +1,12 @@
+.form__title-auth {
+  text-align: center;
+  margin: 0 0 50px;
+}
+
+@media screen and (max-width: 540px) {
+  .form__title-auth {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+    margin: 0 0 40px;
+  }
+}

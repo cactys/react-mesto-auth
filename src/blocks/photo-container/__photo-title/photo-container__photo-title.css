@@ -1,0 +1,8 @@
+.photo-container__photo-title {
+  padding: 0px;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(15 / 12);
+  color: #fff;
+}

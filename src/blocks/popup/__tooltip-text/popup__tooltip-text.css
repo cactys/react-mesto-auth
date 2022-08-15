@@ -1,0 +1,6 @@
+.popup__tooltip-text {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: calc(29 / 24);
+  margin: 32px 0 0;
+}

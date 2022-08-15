@@ -1,0 +1,7 @@
+.photo-container__photo {
+  object-fit: contain;
+  box-sizing: border-box;
+  min-width: 240px;
+  max-width: 75vw;
+  max-height: 75vh;
+}

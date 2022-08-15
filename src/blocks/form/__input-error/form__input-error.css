@@ -1,0 +1,11 @@
+.form__input-error {
+  position: absolute;
+  top: calc(100% + 4px);
+  color: #ff0000;
+  font-weight: 400;
+  font-size: 12px;
+  left: 0;
+  transition: visibility .2s, opacity .2s linear;
+  line-height: calc(15 / 12);
+  opacity: 0;
+}

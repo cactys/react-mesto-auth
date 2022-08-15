@@ -1,0 +1,12 @@
+.card__image {
+  vertical-align: top;
+  width: 100%;
+  min-width: 100%;
+  min-height: 282px;
+  height: 282px;
+  background-color: #545454;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
