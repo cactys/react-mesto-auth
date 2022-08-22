@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import {
-  BrowserRouter,
   Redirect,
   Route,
   Switch,
@@ -58,9 +57,8 @@ const App = () => {
     auth
       .signIn(email, password)
       .then((res) => {
-        console.log(res);
-        if (res.data.token) {
-          localStorage.setItem('jwt', res.data.token);
+        if (res.token) {
+          localStorage.setItem('jwt', res.token);
           setData({
             password: password,
             email: email,
@@ -104,7 +102,6 @@ const App = () => {
             }
           })
           .catch((err) => {
-            console.log(jwt);
             console.log(err);
           });
       }
@@ -202,8 +199,7 @@ const App = () => {
 
   return (
     <div className="page">
-      <CurrentUserContext.Provider value={currentUser}>
-        <BrowserRouter>
+        <CurrentUserContext.Provider value={currentUser}>
           <Header loggedIn={isLogin} signOut={signOut} email={data.email} />
           <Switch>
             <ProtectedRoute
@@ -248,10 +244,9 @@ const App = () => {
           <InfoTooltip
             isOpen={isTooltipPopupOpen}
             onClose={closeAllPopups}
-            infoTooltip={infoTooltip}
+            onInfoTooltip={infoTooltip}
           />
-        </BrowserRouter>
-      </CurrentUserContext.Provider>
+        </CurrentUserContext.Provider>
     </div>
   );
 };

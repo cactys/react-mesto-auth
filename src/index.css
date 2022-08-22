@@ -4,8 +4,13 @@
 @import url(../src/blocks/page/page.css);
 
 @import url(../src/blocks/header/header.css);
+@import url(../src/blocks/header/__container/header__container.css);
 @import url(../src/blocks/header/__logo/header__logo.css);
+@import url(../src/blocks/header/__burger/header__burger.css);
 @import url(../src/blocks/header/__link/header__link.css);
+@import url(../src/blocks/header/__login/header__login.css);
+@import url(../src/blocks/header/__email/header__email.css);
+@import url(../src/blocks/header/__logout/header__logout.css);
 
 @import url(../src/blocks/auth/auth.css);
 

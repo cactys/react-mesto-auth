@@ -11,11 +11,10 @@ class Auth {
   }
 
   signUp(email, password) {
-    console.log(email, '=', password);
     return fetch(`${this._url}/signup`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'aplication/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         password: password,
@@ -25,11 +24,10 @@ class Auth {
   }
 
   signIn(email, password) {
-    console.log(email, '=', password);
     return fetch(`${this._url}/signin`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'aplication/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         password: password,
@@ -38,11 +36,11 @@ class Auth {
     }).then(this._checkingResponse);
   }
 
-  checkToken(token) {
+  getContent(token) {
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'aplication/json',
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
     }).then(this._checkingResponse);

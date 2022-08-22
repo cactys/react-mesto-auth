@@ -1,0 +1,5 @@
+.header__login {
+  display: flex;
+  gap: 24px;
+  margin: 4px 0 0;
+}

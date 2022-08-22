@@ -1,0 +1,30 @@
+.header__burger {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30px 30px;
+}
+
+.header__burger .header__berger-line {
+  display: block;
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.header__burger .header__burger-line_1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.header__burger .header__burger-line_2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.header__burger .header__burger-line_3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
