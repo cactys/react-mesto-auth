@@ -54,12 +54,44 @@ const App = () => {
       });
   };
 
+  const handleLogin = (email, password) => {
+    auth
+      .signIn(email, password)
+      .then((res) => {
+        console.log(res);
+        if (res.data.token) {
+          localStorage.setItem('jwt', res.data.token);
+          setData({
+            password: password,
+            email: email,
+          });
+          setIsLogin(true);
+          history.replace({ pathname: '/main' });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsTooltipPopupOpen(true);
+        setInfoTooltip(false);
+      });
+  };
+
+  const signOut = () => {
+    localStorage.removeItem('jwt');
+    setData({
+      email: '',
+      password: '',
+    });
+    setIsLogin(false);
+    history.push('/sign-in');
+  };
+
   useEffect(() => {
     const tokenCheck = () => {
-      const jwt = auth.getToken();
+      const jwt = localStorage.getItem('jwt');
       if (jwt) {
         auth
-          .checkToken(jwt)
+          .getContent(jwt)
           .then((res) => {
             if (res && res.data.email) {
               setData({
@@ -71,13 +103,13 @@ const App = () => {
               history.push('/sign-in');
             }
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            console.log(jwt);
+            console.log(err);
+          });
       }
     };
     tokenCheck();
-  }, [history, isLogin]);
-
-  useEffect(() => {
     api
       .getUser()
       .then((res) => {
@@ -90,7 +122,7 @@ const App = () => {
         setCards(res);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [history, isLogin]);
 
   const handleEditProfileClick = () => {
     setIsEditProfilePopupOpen(true);
@@ -117,7 +149,6 @@ const App = () => {
       .then((newCard) => {
         setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
       })
-      //совсем забыл =)
       .catch((err) => console.log(err));
   };
 
@@ -173,7 +204,7 @@ const App = () => {
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
         <BrowserRouter>
-          <Header loggedIn={isLogin} />
+          <Header loggedIn={isLogin} signOut={signOut} email={data.email} />
           <Switch>
             <ProtectedRoute
               path="/main"
@@ -188,7 +219,7 @@ const App = () => {
               onCardLike={handleCardLike}
             />
             <Route path="/sign-in">
-              <Login />
+              <Login handleLogin={handleLogin} />
             </Route>
             <Route path="/sign-up">
               <Register handleRegister={handleRegister} />
@@ -214,7 +245,11 @@ const App = () => {
             onAddPlace={handleAddPlaceSubmit}
           />
           <ImagePopup card={selectedCard} isOpen={isOpen} onClose={closeAllPopups} />
-          <InfoTooltip isOpen={isTooltipPopupOpen} onClose={closeAllPopups} />
+          <InfoTooltip
+            isOpen={isTooltipPopupOpen}
+            onClose={closeAllPopups}
+            infoTooltip={infoTooltip}
+          />
         </BrowserRouter>
       </CurrentUserContext.Provider>
     </div>

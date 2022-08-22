@@ -10,29 +10,30 @@ class Auth {
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
-  signUp(data) {
+  signUp(email, password) {
+    console.log(email, '=', password);
     return fetch(`${this._url}/signup`, {
-      method: `POST`,
+      method: 'POST',
       headers: {
-        Accept: 'application/json',
         'Content-Type': 'aplication/json',
       },
       body: JSON.stringify({
-        password: data.password,
-        email: data.email,
+        password: password,
+        email: email,
       }),
     }).then(this._checkingResponse);
   }
 
-  signIn(data) {
+  signIn(email, password) {
+    console.log(email, '=', password);
     return fetch(`${this._url}/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'aplication/json',
       },
       body: JSON.stringify({
-        password: data.password,
-        email: data.email,
+        password: password,
+        email: email,
       }),
     }).then(this._checkingResponse);
   }
@@ -41,24 +42,23 @@ class Auth {
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
       headers: {
-        Accept: 'application/json',
         'Content-Type': 'aplication/json',
         Authorization: `Bearer ${token}`,
       },
     }).then(this._checkingResponse);
   }
 
-  setToken(token) {
-    localStorage.setItem('jwt', token);
-  }
+  // setToken(token) {
+  //   localStorage.setItem('jwt', token);
+  // }
 
-  getToken() {
-    localStorage.getItem('jwt');
-  }
+  // getToken() {
+  //   localStorage.getItem('jwt');
+  // }
 
-  removeToken() {
-    localStorage.removeItem('jwt');
-  }
+  // removeToken() {
+  //   localStorage.removeItem('jwt');
+  // }
 }
 
 const AUTH_CONFIG = {

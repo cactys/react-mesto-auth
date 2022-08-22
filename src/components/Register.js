@@ -36,8 +36,9 @@ const Register = ({ handleRegister }) => {
               value={data.email}
               onChange={handleChange}
               required
+              minLength="2"
+              maxLength="40"
             />
-            {console.log(data)}
             <span className="form__input-error edit-email-error" />
           </label>
           <label className="auth__field">
@@ -50,6 +51,8 @@ const Register = ({ handleRegister }) => {
               value={data.password}
               onChange={handleChange}
               required
+              minLength="2"
+              maxLength="40"
             />
             <span className="form__input-error edit-password-error" />
           </label>
