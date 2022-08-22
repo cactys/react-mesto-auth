@@ -1,4 +1,4 @@
-# Mesto-React-Auth
+# React-Mesto-Auth
 ## Проектная работа студента Яндекс.Практикум
 
 ### Цель, изучить и закрепить на практике
@@ -6,5 +6,5 @@
 + Реализация регистрации и авторизации на сторонний бэкэнд
 
 ---
-[gh-page](https://cactys.github.io/mesto-react-auth/)  
+[gh-page](https://cactys.github.io/react-mesto-auth/)  
 &copy; 2022 Mesto Russia

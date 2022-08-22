@@ -1,6 +1,6 @@
 {
-  "homepage": "https://cactys.github.io/mesto-react-auth/",
-  "name": "mesto-react-auth",
+  "homepage": "https://cactys.github.io/react-mesto-auth/",
+  "name": "react-mesto-auth",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
