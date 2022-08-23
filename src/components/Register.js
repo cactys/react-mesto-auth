@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import AuthForm from './AuthForm';
 
 const Register = ({ handleRegister }) => {
   const [data, setData] = useState({
@@ -22,51 +23,47 @@ const Register = ({ handleRegister }) => {
   };
 
   return (
-    <div className="auth">
-      <form className="form form__auth" onSubmit={handleSubmit}>
-        <h2 className="form__title-auth">Регистрация</h2>
-        <fieldset className="form__set-auth">
-          <label className="form__field">
-            <input
-              type="email"
-              placeholder="Email"
-              className="form__input form__input_auth"
-              id="edit-email"
-              name="email"
-              value={data.email}
-              onChange={handleChange}
-              required
-              minLength="2"
-              maxLength="40"
-            />
-            <span className="form__input-error edit-email-error" />
-          </label>
-          <label className="auth__field">
-            <input
-              type="password"
-              placeholder="Пароль"
-              className="form__input form__input_auth"
-              id="edit-password"
-              name="password"
-              value={data.password}
-              onChange={handleChange}
-              required
-              minLength="2"
-              maxLength="40"
-            />
-            <span className="form__input-error edit-password-error" />
-          </label>
-        </fieldset>
-        <button type="submit" className="form__submit-auth">
-          Зарегистрироваться
-        </button>
-        <div className="form__sign-in">
-          <Link className="form__link" to="/sign-in">
-            Уже зарегистрированы? Войти
-          </Link>
-        </div>
-      </form>
-    </div>
+    <AuthForm
+      name="sign-in"
+      title="Регистрация"
+      onSubmit={handleSubmit}
+      buttonText="Зарегистрироваться"
+      path="/sign-in"
+      linkText="Уже зарегистрированы? Войти"
+    >
+      <fieldset className="form__set-auth">
+        <label className="form__field">
+          <input
+            type="email"
+            placeholder="Email"
+            className="form__input form__input_auth"
+            id="edit-email"
+            name="email"
+            value={data.email}
+            onChange={handleChange}
+            required
+            minLength="2"
+            maxLength="40"
+          />
+          <span className="form__input-error edit-email-error" />
+        </label>
+        <label className="auth__field">
+          <input
+            type="password"
+            placeholder="Пароль"
+            className="form__input form__input_auth"
+            id="edit-password"
+            name="password"
+            value={data.password}
+            onChange={handleChange}
+            required
+            minLength="2"
+            maxLength="40"
+          />
+          <span className="form__input-error edit-password-error" />
+        </label>
+      </fieldset>
+    </AuthForm>
   );
 };
 
