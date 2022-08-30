@@ -1,5 +1,6 @@
 # React-Mesto-Auth
 ## Проектная работа студента Яндекс.Практикум
+Рефакторинг проекта [Mesto-React](https://github.com/cactys/mesto-react). Добавлена регистрация и авторизация пользователя.
 
 ### Цель, изучить и закрепить на практике
 + [React](https://ru.reactjs.org/docs/getting-started.html)
