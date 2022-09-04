@@ -1,3 +1,4 @@
+*[Ссылка на DEMO проекта](https://cactys.github.io/react-mesto-auth/)*  
 # Mesto 
 Интерактивная страница, на которой пользователи могут делиться фотографиями, удалять их и ставить лайки.
 
@@ -63,5 +64,4 @@
     npm run start
 
 ---
-*[Ссылка на DEMO проекта](https://cactys.github.io/react-mesto-auth/)*  
 *&copy; 2022 Mesto Russia*
