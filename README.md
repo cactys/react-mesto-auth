@@ -1,5 +1,5 @@
 **[Ссылка на DEMO проекта](https://cactys.github.io/react-mesto-auth/)**  
-*[макет Figma](https://www.figma.com/file/5H3gsn5lIGPwzBPby9jAOo/JavaScript.-Sprint-12?node-id=0%3A1)*
+  - *[макет Figma](https://www.figma.com/file/5H3gsn5lIGPwzBPby9jAOo/JavaScript.-Sprint-12?node-id=0%3A1)*
 # Mesto 
 Интерактивная страница, на которой пользователи могут делиться фотографиями, удалять их и ставить лайки.
 
