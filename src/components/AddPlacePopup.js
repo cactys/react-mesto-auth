@@ -21,43 +21,43 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
 
   return (
     <PopupWithForm
-      name="add-photo"
-      title="Новое место"
-      buttonText="Создать"
+      name='add-photo'
+      title='Новое место'
+      buttonText='Создать'
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <fieldset className="form__set">
-        <label className="form__field">
+      <fieldset className='form__set'>
+        <label className='form__field'>
           <input
-            type="text"
-            placeholder="Название"
-            className="form__input form__input_photo-title"
-            id="card-name"
-            name="title"
+            type='text'
+            placeholder='Название'
+            className='form__input form__input_photo-title'
+            id='card-name'
+            name='title'
             required
-            minLength="2"
-            maxLength="40"
+            minLength='2'
+            maxLength='40'
             ref={titleRef}
           />
-          <span className="form__input-error card-name-error"></span>
+          <span className='form__input-error card-name-error'></span>
         </label>
-        <label className="form__field">
+        <label className='form__field'>
           <input
-            type="url"
-            placeholder="Ссылка на картинку"
-            className="form__input form__input_photo-link"
-            id="card-link"
-            name="link"
+            type='url'
+            placeholder='Ссылка на картинку'
+            className='form__input form__input_photo-link'
+            id='card-link'
+            name='link'
             ref={imageRef}
             required
           />
-          <span className="form__input-error card-link-error"></span>
+          <span className='form__input-error card-link-error'></span>
         </label>
       </fieldset>
     </PopupWithForm>
   );
-}
+};
 
 export default AddPlacePopup;
