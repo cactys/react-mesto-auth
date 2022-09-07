@@ -50,19 +50,20 @@
 + [React](https://ru.reactjs.org/docs/getting-started.html)
 + Реализация регистрации и авторизации на сторонний бэкэнд
 
-## Установка и запуск приложения:
-
-Клонировать репозиторий:
-
+---
+1. Установить [Node.js](https://nodejs.org/en/ "ссылка на сайт Node.js")
+2. Установить [Git](https://git-scm.com/ "ссылка на сайт Git")
+3. Скачайть или склонировать себе командой:
+```sh
     git clone https://github.com/cactys/react-mesto-auth.git
-
-Установить зависимости:
-
+```
+4. Установите зависимости:
+```sh
     npm i
-
-Запустить приложение:
-
+```
+5. Запустить проект:
+```sh
     npm run start
-
+```
 ---
 *&copy; 2022 Mesto Russia*
