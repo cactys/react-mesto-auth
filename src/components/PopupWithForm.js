@@ -8,8 +8,14 @@ const PopupWithForm = ({
   onSubmit,
 }) => {
   return (
-    <div className={`popup popup_type_${name} ${isOpen && 'popup_opened'}`}>
-      <div className="popup__container">
+    <div
+      className={`popup popup_type_${name} ${isOpen && 'popup_opened'}`}
+      onClick={onClose}
+    >
+      <div
+        className="popup__container"
+        onClick={(evt) => evt.stopPropagation()}
+      >
         <button className="popup__close" type="button" onClick={onClose} />
         <form
           className="form form_edit-profile"

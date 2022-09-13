@@ -4,8 +4,14 @@ import access from '../images/access.svg';
 
 const InfoTooltip = ({ isOpen, onClose, onInfoTooltip }) => {
   return (
-    <div className={`popup popup_type_tooltip ${isOpen && 'popup_opened'}`}>
-      <div className="popup__container">
+    <div
+      className={`popup popup_type_tooltip ${isOpen && 'popup_opened'}`}
+      onClick={onClose}
+    >
+      <div
+        className="popup__container"
+        onClick={(evt) => evt.stopPropagation()}
+      >
         <button className="popup__close" type="button" onClick={onClose} />
         <img
           className="popup__icon-tooltip"

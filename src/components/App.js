@@ -45,6 +45,7 @@ const App = () => {
         closeAllPopups();
       }
     }
+
     if (isOpenPopup) {
       document.addEventListener('keydown', closeByEscape);
       return () => {
@@ -160,7 +161,9 @@ const App = () => {
     api
       .changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
-        setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
+        setCards((state) =>
+          state.map((c) => (c._id === card._id ? newCard : c))
+        );
       })
       .catch((err) => console.log(err));
   };
@@ -256,7 +259,11 @@ const App = () => {
           onClose={closeAllPopups}
           onAddPlace={handleAddPlaceSubmit}
         />
-        <ImagePopup card={selectedCard} isOpen={isOpen} onClose={closeAllPopups} />
+        <ImagePopup
+          card={selectedCard}
+          isOpen={isOpen}
+          onClose={closeAllPopups}
+        />
         <InfoTooltip
           isOpen={isTooltipPopupOpen}
           onClose={closeAllPopups}
