@@ -60,7 +60,7 @@ class Auth {
 }
 
 const AUTH_CONFIG = {
-  baseUrl: 'https://auth.nomoreparties.co',
+  baseUrl: 'http://backhortys.nomoredomains.icu',
 };
 
 const auth = new Auth(AUTH_CONFIG);

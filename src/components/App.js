@@ -4,7 +4,7 @@ import Main from './Main';
 import Header from './Header';
 import ImagePopup from './ImagePopup';
 import Footer from './Footer';
-import api from '../utils/api';
+import { api } from '../utils/api';
 import auth from '../utils/auth';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import EditProfilePopup from './EditProfilePopup';

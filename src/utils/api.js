@@ -1,7 +1,6 @@
 class Api {
-  constructor({ baseUrl, headers }) {
+  constructor({ baseUrl }) {
     this._url = baseUrl;
-    this._headers = headers;
   }
 
   _checkingResponse(res) {
@@ -14,14 +13,12 @@ class Api {
   getUser() {
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
-      headers: this._headers,
     }).then(this._checkingResponse);
   }
 
   editUserInfo(data) {
     return fetch(`${this._url}/users/me`, {
       method: 'PATCH',
-      headers: this._headers,
       body: JSON.stringify({
         name: data.name,
         about: data.about,
@@ -32,7 +29,6 @@ class Api {
   editAvatar(data) {
     return fetch(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this._headers,
       body: JSON.stringify({
         avatar: data.avatar,
       }),
@@ -42,14 +38,12 @@ class Api {
   getCards() {
     return fetch(`${this._url}/cards`, {
       method: 'GET',
-      headers: this._headers,
     }).then(this._checkingResponse);
   }
 
   addCard(data) {
     return fetch(`${this._url}/cards`, {
       method: 'POST',
-      headers: this._headers,
       body: JSON.stringify({
         name: data.title,
         link: data.link,
@@ -60,7 +54,6 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this._url}/cards/${cardId}`, {
       method: 'DELETE',
-      headers: this._headers,
     }).then(this._checkingResponse);
   }
 
@@ -71,14 +64,12 @@ class Api {
   putLike(id) {
     return fetch(`${this._url}/cards/likes/${id}`, {
       method: 'PUT',
-      headers: this._headers,
     }).then(this._checkingResponse);
   }
 
   deletLike(id) {
     return fetch(`${this._url}/cards/likes/${id}`, {
       method: 'DELETE',
-      headers: this._headers,
     }).then(this._checkingResponse);
   }
 
@@ -86,15 +77,6 @@ class Api {
     return Promise.all([this.getUser(), this.getCards()]);
   }
 }
-
-const API_CONFIG = {
-  baseUrl: 'http://khortys.nomoredomains.icu/api',
-  headers: {
-    authorization: '78b845d7-f9bb-43fd-9d7f-fb92a3c4ec96',
-    'Content-Type': 'application/json',
-  },
-};
-
-const api = new Api(API_CONFIG);
-
-export default api;
+export const api = new Api({
+  baseUrl: 'http://backhortys.nomoredomains.icu',
+});
