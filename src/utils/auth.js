@@ -48,7 +48,7 @@ class Auth {
 }
 
 const AUTH_CONFIG = {
-  baseUrl: 'https://api.cactys.nomoredomains.icu',
+  baseUrl: 'https://auth.nomoreparties.co',
 };
 
 const auth = new Auth(AUTH_CONFIG);

@@ -12,20 +12,20 @@ const Header = ({ loggedOut, email }) => {
         </div>
       </div> */}
       <Switch>
-        <Route path="/sign-in">
-          <Link className="header__link" to="/sign-up">
+        <Route path="/signin">
+          <Link className="header__link" to="/signup">
             Регистрация
           </Link>
         </Route>
-        <Route path="/sign-up">
-          <Link className="header__link" to="/sign-in">
+        <Route path="/signup">
+          <Link className="header__link" to="/signin">
             Войти
           </Link>
         </Route>
         <Route path="/main">
           <div className="header__login">
             <p className="header__email">{email}</p>
-            <Link className="header__logout" to="/sign-in" onClick={loggedOut}>
+            <Link className="header__logout" to="/signin" onClick={loggedOut}>
               Выйти
             </Link>
           </div>

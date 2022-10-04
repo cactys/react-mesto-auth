@@ -59,7 +59,7 @@ const App = () => {
       .signUp(email, password)
       .then(() => {
         setInfoTooltip(true);
-        history.push('/sign-in');
+        history.push('/signin');
       })
       .catch((err) => {
         console.log(err);
@@ -115,7 +115,7 @@ const App = () => {
               setIsLogin(true);
               history.push('/main');
             } else {
-              history.push('/sign-in');
+              history.push('/signin');
             }
           })
           .catch((err) => {
@@ -233,14 +233,14 @@ const App = () => {
             onCardDelete={handleCardDelete}
             onCardLike={handleCardLike}
           />
-          <Route path="/sign-in">
+          <Route path="/signin">
             <Login handleLogin={handleLogin} />
           </Route>
-          <Route path="/sign-up">
+          <Route path="/signup">
             <Register handleRegister={handleRegister} />
           </Route>
           <Route>
-            {!isLogin ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
+            {!isLogin ? <Redirect to="/main" /> : <Redirect to="/signin" />}
           </Route>
         </Switch>
         <Footer />

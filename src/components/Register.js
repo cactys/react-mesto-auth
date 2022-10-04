@@ -23,11 +23,11 @@ const Register = ({ handleRegister }) => {
 
   return (
     <AuthForm
-      name="sign-in"
+      name="signin"
       title="Регистрация"
       onSubmit={handleSubmit}
       buttonText="Зарегистрироваться"
-      path="/sign-in"
+      path="/signin"
       linkText="Уже зарегистрированы? Войти"
     >
       <fieldset className="form__set-auth">
