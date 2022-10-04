@@ -45,22 +45,10 @@ class Auth {
       },
     }).then(this._checkingResponse);
   }
-
-  // setToken(token) {
-  //   localStorage.setItem('jwt', token);
-  // }
-
-  // getToken() {
-  //   localStorage.getItem('jwt');
-  // }
-
-  // removeToken() {
-  //   localStorage.removeItem('jwt');
-  // }
 }
 
 const AUTH_CONFIG = {
-  baseUrl: 'http://backhortys.nomoredomains.icu',
+  baseUrl: 'https://api.cactys.nomoredomains.icu',
 };
 
 const auth = new Auth(AUTH_CONFIG);

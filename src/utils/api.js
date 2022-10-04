@@ -78,5 +78,5 @@ class Api {
   }
 }
 export const api = new Api({
-  baseUrl: 'http://backhortys.nomoredomains.icu',
+  baseUrl: 'https://api.cactys.nomoredomains.icu',
 });
