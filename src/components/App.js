@@ -58,8 +58,9 @@ const App = () => {
     auth
       .signUp(email, password)
       .then(() => {
+        setIsTooltipPopupOpen(true);
         setInfoTooltip(true);
-        history.push('/signin');
+        history.push('/sign-in');
       })
       .catch((err) => {
         console.log(err);
@@ -72,15 +73,15 @@ const App = () => {
     auth
       .signIn(email, password)
       .then((res) => {
-        if (res.token) {
+        // if (res.token) {
           localStorage.setItem('jwt', res.token);
           setData({
             password: password,
             email: email,
           });
           setIsLogin(true);
-          history.replace({ pathname: '/main' });
-        }
+          history.push('/main');
+        // }
       })
       .catch((err) => {
         console.log(err);
@@ -115,7 +116,7 @@ const App = () => {
               setIsLogin(true);
               history.push('/main');
             } else {
-              history.push('/signin');
+              history.push('/sign-in');
             }
           })
           .catch((err) => {
@@ -233,14 +234,14 @@ const App = () => {
             onCardDelete={handleCardDelete}
             onCardLike={handleCardLike}
           />
-          <Route path="/signin">
+          <Route path="/sign-in">
             <Login handleLogin={handleLogin} />
           </Route>
-          <Route path="/signup">
+          <Route path="/sign-up">
             <Register handleRegister={handleRegister} />
           </Route>
           <Route>
-            {!isLogin ? <Redirect to="/main" /> : <Redirect to="/signin" />}
+            {isLogin ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
           </Route>
         </Switch>
         <Footer />

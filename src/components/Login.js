@@ -26,11 +26,11 @@ const Login = ({ handleLogin }) => {
 
   return (
     <AuthForm
-      name="signup"
+      name="sign-up"
       title="Вход"
       onSubmit={handleSubmit}
       buttonText="Войти"
-      path="/signup"
+      path="/sign-up"
       linkText=""
     >
       <fieldset className="form__set-auth">
