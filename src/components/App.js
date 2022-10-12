@@ -58,7 +58,6 @@ const App = () => {
     auth
       .signUp(email, password)
       .then(() => {
-        setIsTooltipPopupOpen(true);
         setInfoTooltip(true);
         history.push('/sign-in');
       })
@@ -73,15 +72,15 @@ const App = () => {
     auth
       .signIn(email, password)
       .then((res) => {
-        // if (res.token) {
+        if (res.token) {
           localStorage.setItem('jwt', res.token);
           setData({
             password: password,
             email: email,
           });
           setIsLogin(true);
-          history.push('/main');
-        // }
+          history.push({ pathname: '/main' });
+        }
       })
       .catch((err) => {
         console.log(err);
